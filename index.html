@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Carlo Rey Tungolh — Administrative & Online Support Portfolio">
+<title>Carlo Rey Tungolh — Digital Support Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5ef;--surface:#fffdf8;--text:#121820;--muted:#68717d;
+  --line:rgba(18,24,32,.11);--navy:#172433;--gold:#b58a4c;--gold2:#d2b27a;
+  --glass:rgba(255,253,248,.72);--shadow:0 25px 80px rgba(15,23,32,.13);
+}
+[data-theme="dark"]{
+  --bg:#0b1016;--surface:#111820;--text:#f3f0e9;--muted:#a9b1bb;
+  --line:rgba(255,255,255,.11);--navy:#e9e5dc;--gold:#d3ad6e;--gold2:#efd09a;
+  --glass:rgba(17,24,32,.72);--shadow:0 25px 80px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;transition:background .35s,color .35s}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
+nav{
+ position:fixed;z-index:50;top:18px;left:50%;transform:translateX(-50%);
+ width:min(1100px,92%);padding:11px 12px 11px 20px;border:1px solid var(--line);
+ border-radius:999px;background:var(--glass);backdrop-filter:blur(18px);
+ display:flex;align-items:center;justify-content:space-between;box-shadow:0 12px 35px rgba(0,0,0,.07)
+}
+.brand{font-family:Manrope;font-weight:800;letter-spacing:.07em;font-size:.9rem}
+.brand span{color:var(--gold)}
+.navlinks{display:flex;gap:23px;font-size:.82rem;font-weight:700}
+.navlinks a{color:var(--muted);transition:.2s}.navlinks a:hover{color:var(--gold)}
+.actions{display:flex;align-items:center;gap:8px}
+.theme{width:39px;height:39px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--text);cursor:pointer}
+.nav-btn{padding:10px 16px;border-radius:999px;background:var(--text);color:var(--bg);font-size:.78rem;font-weight:800}
+.hero{min-height:100vh;position:relative;display:grid;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:
+ radial-gradient(circle at 78% 27%,rgba(181,138,76,.2),transparent 23%),
+ radial-gradient(circle at 15% 85%,rgba(72,99,125,.11),transparent 27%);
+}
+.orbit{position:absolute;width:620px;height:620px;border:1px solid rgba(181,138,76,.25);border-radius:50%;right:-250px;top:90px;animation:spin 24s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;background:var(--gold)}
+.orbit:before{width:8px;height:8px;left:17%;top:8%}.orbit:after{width:5px;height:5px;right:12%;bottom:19%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center;padding:150px 0 90px}
+.kicker{display:flex;align-items:center;gap:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;font-weight:800;margin-bottom:21px}
+.kicker:before{content:"";height:1px;width:38px;background:var(--gold)}
+h1{font-family:"Playfair Display",serif;font-size:clamp(3.5rem,7.3vw,7.3rem);line-height:.91;letter-spacing:-.055em;font-weight:600}
+h1 i{color:var(--gold);font-style:italic}
+.hero-desc{max-width:640px;color:var(--muted);font-size:1.08rem;margin:28px 0 29px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--line);padding:13px 19px;border-radius:999px;font-size:.84rem;font-weight:800;transition:.25s}
+.btn-main{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.12)}
+.hero-note{margin-top:20px;color:var(--muted);font-size:.74rem}
+.portrait{position:relative;display:grid;place-items:center}
+.photo-shell{
+ width:min(410px,78vw);aspect-ratio:4/5;padding:12px;background:linear-gradient(145deg,var(--navy),#273b50);
+ border-radius:45% 45% 24px 24px;transform:rotate(2.5deg);box-shadow:var(--shadow);position:relative
+}
+.photo-shell:after{content:"";position:absolute;inset:7px;border:1px solid rgba(255,255,255,.18);border-radius:42% 42% 18px 18px;pointer-events:none}
+.photo-shell img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top;border-radius:37% 37% 15px 15px}
+.floating{
+ position:absolute;display:flex;align-items:center;gap:9px;padding:11px 14px;border:1px solid var(--line);
+ background:var(--glass);backdrop-filter:blur(12px);border-radius:15px;font-size:.73rem;font-weight:800;
+ box-shadow:0 12px 30px rgba(0,0,0,.08);animation:float 4s ease-in-out infinite
+}
+.floating.one{left:-24px;top:16%}.floating.two{right:-25px;bottom:17%;animation-delay:-2s}
+.dot{width:8px;height:8px;background:var(--gold);border-radius:50%}
+@keyframes float{50%{transform:translateY(-9px)}}
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;gap:28px;padding:14px 0;animation:marquee 22s linear infinite;color:var(--muted);font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.marquee b{color:var(--gold)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+section{padding:112px 0}
+.section-top{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:43px}
+.eyebrow{color:var(--gold);font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;font-weight:800;margin-bottom:11px}
+h2{font-family:"Playfair Display";font-size:clamp(2.5rem,5vw,4.4rem);line-height:.98;letter-spacing:-.04em}
+.section-top p{max-width:440px;color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:25px}
+.panel{border:1px solid var(--line);background:var(--surface);border-radius:28px;padding:35px;box-shadow:0 12px 45px rgba(0,0,0,.035)}
+.quote{font-family:"Playfair Display";font-size:1.8rem;line-height:1.3}
+.quote span{color:var(--gold)}
+.about-text{font-size:1.02rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:25px}
+.stat{padding:16px;border-radius:16px;background:var(--bg);border:1px solid var(--line)}
+.stat strong{display:block;font-family:Manrope;font-size:.72rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em}
+.stat span{font-size:.84rem;font-weight:700}
+.projects{background:var(--navy);color:#fff}
+.projects .section-top p{color:#b7c0ca}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.project{
+ min-height:310px;border:1px solid rgba(255,255,255,.13);border-radius:25px;padding:27px;
+ background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+ position:relative;overflow:hidden;transition:.35s;display:flex;flex-direction:column;justify-content:space-between
+}
+.project:before{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(211,173,110,.18);border-radius:50%;right:-80px;top:-70px;transition:.35s}
+.project:hover{transform:translateY(-8px);border-color:rgba(211,173,110,.5);box-shadow:0 25px 55px rgba(0,0,0,.22)}
+.project:hover:before{transform:scale(1.35)}
+.project-num{font-family:Manrope;color:#d5b77f;font-size:.72rem;letter-spacing:.15em}
+.project h3{font-family:"Playfair Display";font-size:1.75rem;line-height:1.05;margin:30px 0 10px}
+.project p{color:#b7c0ca;font-size:.84rem}
+.project-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.project-tags span{font-size:.66rem;border:1px solid rgba(255,255,255,.17);padding:6px 9px;border-radius:999px;color:#d4d9df}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.skill{
+ border:1px solid var(--line);border-radius:21px;padding:23px;background:var(--surface);
+ transition:.28s;position:relative;overflow:hidden
+}
+.skill:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(181,138,76,.45)}
+.skill-icon{width:48px;height:48px;border-radius:15px;background:var(--navy);color:var(--bg);display:grid;place-items:center;font-family:Manrope;font-weight:800;font-size:.75rem;margin-bottom:20px}
+.skill h3{font-size:1rem;margin-bottom:7px}.skill p{font-size:.8rem;color:var(--muted)}
+.tool-section{background:var(--bg)}
+.tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.tool{
+ display:flex;align-items:center;gap:14px;padding:18px;border:1px solid var(--line);border-radius:19px;background:var(--surface);
+ transition:.25s
+}
+.tool:hover{transform:translateX(5px);border-color:rgba(181,138,76,.45)}
+.logo{width:46px;height:46px;border-radius:13px;background:var(--text);color:var(--bg);display:grid;place-items:center;font-family:Manrope;font-weight:800;font-size:.7rem}
+.tool b{font-size:.9rem}.tool small{display:block;color:var(--muted);font-size:.72rem;margin-top:2px}
+.education{display:grid;grid-template-columns:1.2fr .8fr;gap:17px}
+.edu{border:1px solid var(--line);border-radius:23px;padding:28px;background:var(--surface)}
+.edu small{color:var(--gold);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.68rem}
+.edu h3{font-family:"Playfair Display";font-size:1.65rem;margin:8px 0}
+.edu p{color:var(--muted);font-size:.88rem}
+.contact{background:var(--text);color:var(--bg);text-align:center}
+.contact .eyebrow{color:var(--gold)}
+.contact p{max-width:590px;margin:17px auto 28px;color:var(--muted)}
+.contact .btn-main{background:var(--gold);border-color:var(--gold);color:#fff}
+.contact .btn:not(.btn-main){border-color:rgba(255,255,255,.18);color:var(--bg)}
+footer{background:var(--text);color:var(--muted);padding:23px 0;border-top:1px solid rgba(255,255,255,.1);font-size:.72rem}
+footer .container{display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+.cursor{position:fixed;pointer-events:none;width:18px;height:18px;border:1px solid var(--gold);border-radius:50%;z-index:100;transform:translate(-50%,-50%);transition:transform .08s linear;mix-blend-mode:difference}
+@media(max-width:900px){
+ .hero-grid,.about-grid,.education{grid-template-columns:1fr}
+ .hero-grid{gap:55px}.portrait{order:-1}
+ .project-grid{grid-template-columns:1fr 1fr}.skills-grid{grid-template-columns:1fr 1fr}
+ .tool-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+ nav{top:10px}.navlinks,.nav-btn{display:none}
+ .hero-grid{padding-top:115px}.photo-shell{width:min(350px,84vw)}
+ .floating.one{left:-4px}.floating.two{right:-4px}
+ section{padding:78px 0}.section-top{display:block}.section-top p{margin-top:15px}
+ .project-grid,.skills-grid,.tool-grid{grid-template-columns:1fr}
+ .panel{padding:26px}.quote{font-size:1.5rem}
+ footer .container{display:block}footer p:last-child{margin-top:7px}
+ .cursor{display:none}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+
+<nav>
+  <a class="brand" href="#home">CARLO <span>REY</span></a>
+  <div class="navlinks">
+    <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#tools">Tools</a><a href="#contact">Contact</a>
+  </div>
+  <div class="actions">
+    <button class="theme" id="theme" aria-label="Toggle dark and light mode">☾</button>
+    <a class="nav-btn" href="Carlo_Rey_Tungolh_CV.pdf" download>Download CV</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-bg"></div><div class="orbit"></div>
+  <div class="container hero-grid">
+    <div class="reveal">
+      <div class="kicker">Administrative & Online Support</div>
+      <h1>Work with <i>clarity.</i><br>Move with purpose.</h1>
+      <p class="hero-desc">I’m Carlo Rey Tungolh — a reliable digital support professional focused on organization, research, content assistance, communication, and accurate task completion.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-main" href="#projects">View selected work ↗</a>
+        <a class="btn" href="Carlo_Rey_Tungolh_CV.pdf" download>Download CV ↓</a>
+      </div>
+      <div class="hero-note">Davao City, Philippines · tcarlorey@gmail.com</div>
+    </div>
+    <div class="portrait reveal">
+      <div class="photo-shell"><img src="https://plain-apac-prod-public.komododecks.com/202609/10/ulvI7mGUN4CeSYaaAJzW/image.png" alt="Carlo Rey Tungolh"></div>
+      <div class="floating one"><span class="dot"></span>Available for opportunities</div>
+      <div class="floating two"><span class="dot"></span>Fast learner · Detail focused</div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>DATA ENTRY</span><b>✦</b><span>ONLINE RESEARCH</span><b>✦</b><span>CANVA</span><b>✦</b><span>AI-ASSISTED WORKFLOWS</span><b>✦</b><span>COMMUNICATION</span><b>✦</b>
+    <span>DATA ENTRY</span><b>✦</b><span>ONLINE RESEARCH</span><b>✦</b><span>CANVA</span><b>✦</b><span>AI-ASSISTED WORKFLOWS</span><b>✦</b><span>COMMUNICATION</span><b>✦</b>
+  </div>
+</div>
+
+<section id="about">
+ <div class="container">
+  <div class="section-top reveal">
+   <div><div class="eyebrow">01 / Profile</div><h2>Built for<br>reliable support.</h2></div>
+   <p>A practical, adaptable approach to digital work — with attention to detail, professional communication, and a strong commitment to deadlines.</p>
+  </div>
+  <div class="about-grid">
+   <div class="panel reveal">
+    <div class="quote">“Quality work starts with <span>clear organization</span>, consistent communication, and a willingness to learn.”</div>
+    <div class="stats">
+      <div class="stat"><strong>Focus</strong><span>Online & Admin Support</span></div>
+      <div class="stat"><strong>Strength</strong><span>Adaptability</span></div>
+      <div class="stat"><strong>Style</strong><span>Independent & Organized</span></div>
+      <div class="stat"><strong>Location</strong><span>Davao City, Philippines</span></div>
+    </div>
+   </div>
+   <div class="panel reveal">
+    <p class="about-text">I help keep digital tasks organized and moving forward. My work includes basic data entry, online research, file and document organization, simple Canva graphics, AI-assisted research and writing, professional chat communication, and independent task completion.</p>
+    <br><p class="about-text">I’m comfortable learning new tools and processes quickly, managing multiple tasks, following instructions carefully, and completing assigned work within deadlines.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="projects" id="projects">
+ <div class="container">
+  <div class="section-top reveal">
+   <div><div class="eyebrow">02 / Selected work</div><h2>Projects &<br>work samples.</h2></div>
+   <p>Examples of the type of digital support and content work I can contribute to. These are presented as portfolio work samples rather than client claims.</p>
+  </div>
+  <div class="project-grid">
+   <article class="project reveal">
+    <div><div class="project-num">PROJECT 01</div><h3>Administrative Workflow</h3><p>A structured sample workflow for organizing digital files, records, task lists, and routine online support.</p></div>
+    <div class="project-tags"><span>Organization</span><span>Data Entry</span><span>Records</span></div>
+   </article>
+   <article class="project reveal">
+    <div><div class="project-num">PROJECT 02</div><h3>Research & Content Support</h3><p>A sample research-to-content workflow using online research and AI-assisted drafting for clearer, faster productivity.</p></div>
+    <div class="project-tags"><span>Research</span><span>ChatGPT</span><span>Writing</span></div>
+   </article>
+   <article class="project reveal">
+    <div><div class="project-num">PROJECT 03</div><h3>Social Content Kit</h3><p>A sample Canva-based content system for simple graphics, captions, content organization, and consistent presentation.</p></div>
+    <div class="project-tags"><span>Canva</span><span>Content</span><span>Design</span></div>
+   </article>
+   <article class="project reveal">
+    <div><div class="project-num">PROJECT 04</div><h3>AI Productivity Desk</h3><p>A sample toolkit showing how AI can assist with research, writing, brainstorming, summarizing, and task planning.</p></div>
+    <div class="project-tags"><span>AI Tools</span><span>Productivity</span><span>Workflow</span></div>
+   </article>
+   <article class="project reveal">
+    <div><div class="project-num">PROJECT 05</div><h3>Responsive Web Portfolio</h3><p>This portfolio itself — designed as a responsive digital presence with animations, theme switching, and deployment-ready files.</p></div>
+    <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+   </article>
+   <article class="project reveal">
+    <div><div class="project-num">PROJECT 06</div><h3>Digital Task System</h3><p>A sample approach for breaking assignments into clear priorities, tracking progress, and completing work independently.</p></div>
+    <div class="project-tags"><span>Planning</span><span>Multitasking</span><span>Deadlines</span></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="container">
+  <div class="section-top reveal">
+   <div><div class="eyebrow">03 / Capabilities</div><h2>Core skills.</h2></div>
+   <p>Practical skills for dependable day-to-day digital and administrative work.</p>
+  </div>
+  <div class="skills-grid">
+   <div class="skill reveal"><div class="skill-icon">01</div><h3>Data & Records</h3><p>Data entry, organization, record keeping, and careful handling of information.</p></div>
+   <div class="skill reveal"><div class="skill-icon">02</div><h3>Research</h3><p>Online research, information gathering, and clear organization of findings.</p></div>
+   <div class="skill reveal"><div class="skill-icon">03</div><h3>Communication</h3><p>Professional chat communication, teamwork, and clear follow-through.</p></div>
+   <div class="skill reveal"><div class="skill-icon">04</div><h3>Productivity</h3><p>Multitasking, time management, adaptability, and independent work.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="tool-section" id="tools">
+ <div class="container">
+  <div class="section-top reveal">
+   <div><div class="eyebrow">04 / Digital toolkit</div><h2>Tools I use.</h2></div>
+   <p>A growing toolkit for research, content, design, productivity, coding, and web deployment.</p>
+  </div>
+  <div class="tool-grid">
+   <div class="tool reveal"><div class="logo">AI</div><div><b>ChatGPT</b><small>Research & productivity</small></div></div>
+   <div class="tool reveal"><div class="logo">G</div><div><b>Google Gemini</b><small>AI-assisted workflows</small></div></div>
+   <div class="tool reveal"><div class="logo">C</div><div><b>Canva</b><small>Graphics & content</small></div></div>
+   <div class="tool reveal"><div class="logo">GA</div><div><b>Google AI Studio</b><small>AI experimentation</small></div></div>
+   <div class="tool reveal"><div class="logo">GH</div><div><b>GitHub</b><small>Code & version control</small></div></div>
+   <div class="tool reveal"><div class="logo">V</div><div><b>Vercel</b><small>Web deployment</small></div></div>
+   <div class="tool reveal"><div class="logo">MS</div><div><b>Microsoft Office</b><small>Word · Excel · PowerPoint</small></div></div>
+   <div class="tool reveal"><div class="logo">WEB</div><div><b>Online Platforms</b><small>Digital communication</small></div></div>
+   <div class="tool reveal"><div class="logo">+</div><div><b>New Tools</b><small>Fast learner & adaptable</small></div></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="section-top reveal">
+   <div><div class="eyebrow">05 / Education</div><h2>Academic<br>foundation.</h2></div>
+   <p>Education information carried over from the supplied resume.</p>
+  </div>
+  <div class="education">
+   <div class="edu reveal"><small>2024–2025</small><h3>Senior High School — HUMSS</h3><p>Tabalong National High School, Tagbilaran, Bohol</p></div>
+   <div class="edu reveal"><small>Achievement</small><h3>Consistent Honor Student</h3><p>Recognized for consistent academic performance.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container reveal">
+  <div class="eyebrow">06 / Contact</div>
+  <h2>Let’s make work<br>move forward.</h2>
+  <p>Open to opportunities where organization, digital support, communication, and a willingness to learn can create value.</p>
+  <div class="hero-buttons" style="justify-content:center">
+   <a class="btn btn-main" href="mailto:tcarlorey@gmail.com">Email me ↗</a>
+   <a class="btn" href="tel:+639304470840">Call +63 930 447 0840</a>
+   <a class="btn" href="Carlo_Rey_Tungolh_CV.pdf" download>Download CV ↓</a>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="container"><p>© 2026 Carlo Rey Tungolh</p><p>Davao City, Philippines · tcarlorey@gmail.com</p></div>
+</footer>
+
+<script>
+const root=document.documentElement, theme=document.getElementById('theme');
+const saved=localStorage.getItem('theme');
+if(saved){root.dataset.theme=saved;theme.textContent=saved==='dark'?'☀':'☾'}
+theme.addEventListener('click',()=>{
+ const dark=root.dataset.theme==='dark';
+ root.dataset.theme=dark?'light':'dark';
+ theme.textContent=dark?'☾':'☀';
+ localStorage.setItem('theme',root.dataset.theme);
+});
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const cursor=document.getElementById('cursor');
+window.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px'});
+</script>
+</body>
+</html>
